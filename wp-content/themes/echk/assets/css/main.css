@@ -275,7 +275,6 @@ a:hover {
 }
 
 /*стили для постов*/
-
 .echk-single-content{
     min-width: 375px;
     width: 210mm;   /* 210mm 798px ширина */
@@ -357,7 +356,6 @@ p em{
         padding:0;
     }
 }
-
 /*конец стилей для постов*/
 
 .container .row .navbar {
@@ -371,5 +369,7 @@ p em{
 .wp-pagenavi a,
 .wp-pagenavi span{
     margin-right: 5px;
+    font-size: 18px;
+    font-weight: 500;
 }
 /*конец стилей для пагинации по страницам*/

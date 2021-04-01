@@ -60,6 +60,9 @@ if ( ! function_exists( 'echk_setup' ) ) :
                 '0023-2-menu' => esc_html__( '0023 Menu', 'echk' ),
                 'pbepkm-menu' => esc_html__( 'pbepkm Menu', 'echk' ),
                 'strelki-menu' => esc_html__( 'strelki Menu', 'echk' ),
+                'regulation-km-menu' => esc_html__( 'regulation-km Menu', 'echk' ),
+                'leiter-menu' => esc_html__( 'leiter Menu', 'echk' ),
+                'vidbudova-menu' => esc_html__( 'vidbudova Menu', 'echk' ),
 			)
 		);
 

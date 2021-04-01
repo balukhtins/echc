@@ -95,10 +95,14 @@ $paged = $wp_query->get( 'page' );
                     </div>
 
                 <?php else: ?>
+                <div class="col">
                     <div class="echk-single-content col">
                         <?php echk_post_thumbnail(); ?>
                     </div>
+                    <div class="echk-single-content col">
                     <?php the_content();?>
+                    </div>
+                </div>
                <?php endif;?>
     <!-- .entry-content -->
 
