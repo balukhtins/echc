@@ -71,7 +71,7 @@ else {
                     <?php $echk_post_title = esc_html( get_the_title() ); ?>
 
                     <?php if (is_single( $echk_post_title )):?>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-3">
+                <nav class="navbar navbar-expand-xl navbar-light bg-light col-md-3 <?= $post->post_name?>-menu">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -87,7 +87,7 @@ else {
                 </nav>
                     <?php endif;?>
 
-                <div class="col-md-8">
+                <div class="col">
 
                     <?php if ( $paged < 2 ):?>
                         <div class="echk-single-content">

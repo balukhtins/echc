@@ -156,16 +156,17 @@ function echk_scripts() {
     wp_enqueue_style( 'echk-google-font', 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700' );
     wp_enqueue_style( 'echk-fonts-style', get_template_directory_uri() .'/assets/fonts/icomoon/style.css' );
     wp_enqueue_style( 'echk-bootstrap-style', get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
-    wp_enqueue_style( 'echk-magnific-popup-style', get_template_directory_uri() .'/assets/css/magnific-popup.css' );
-    wp_enqueue_style( 'echk-jquery-ui-style', get_template_directory_uri() .'/assets/css/jquery-ui.css' );
-    wp_enqueue_style( 'echk-owl-carousel-style', get_template_directory_uri() .'/assets/css/owl.carousel.min.css' );
-    wp_enqueue_style( 'echk-owl-theme-default-style', get_template_directory_uri() .'/assets/css/owl.theme.default.min.css' );
-    wp_enqueue_style( 'echk-bootstrap-datepicker-style', get_template_directory_uri() .'/assets/css/bootstrap-datepicker.css' );
-    wp_enqueue_style( 'echk-flaticon-style', get_template_directory_uri() .'/assets/fonts/flaticon/font/flaticon.css' );
-    wp_enqueue_style( 'echk-aos-style', get_template_directory_uri() .'/assets/css/aos.css' );
+    if (is_page(array('home', 'about-us', 'literature', 'test'))){
+        wp_enqueue_style( 'echk-magnific-popup-style', get_template_directory_uri() .'/assets/css/magnific-popup.css' );
+        wp_enqueue_style( 'echk-jquery-ui-style', get_template_directory_uri() .'/assets/css/jquery-ui.css' );
+        wp_enqueue_style( 'echk-owl-carousel-style', get_template_directory_uri() .'/assets/css/owl.carousel.min.css' );
+        wp_enqueue_style( 'echk-owl-theme-default-style', get_template_directory_uri() .'/assets/css/owl.theme.default.min.css' );
+        wp_enqueue_style( 'echk-bootstrap-datepicker-style', get_template_directory_uri() .'/assets/css/bootstrap-datepicker.css' );
+        wp_enqueue_style( 'echk-flaticon-style', get_template_directory_uri() .'/assets/fonts/flaticon/font/flaticon.css' );
+        wp_enqueue_style( 'echk-aos-style', get_template_directory_uri() .'/assets/css/aos.css' );
+    }
     wp_enqueue_style( 'echk-style-style', get_template_directory_uri() .'/assets/css/style.css' );
     wp_enqueue_style( 'echk-main-style', get_template_directory_uri() .'/assets/css/main.css' );
-
 
     wp_style_add_data( 'echk-style', 'rtl', 'replace' );
 
@@ -173,20 +174,24 @@ function echk_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_template_directory_uri().'/assets/js/jquery-3.3.1.min.js');
     wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-migrate-js', get_template_directory_uri().'/assets/js/jquery-migrate-3.0.1.min.js',array('jquery'), '', true);
-    wp_enqueue_script('jquery-ui-js', get_template_directory_uri().'/assets/js/jquery-ui.js',array('jquery'), '', true);
+    if (is_page(array('home', 'about-us', 'literature', 'test'))){
+        wp_enqueue_script('jquery-migrate-js', get_template_directory_uri().'/assets/js/jquery-migrate-3.0.1.min.js',array('jquery'), '', true);
+        wp_enqueue_script('jquery-ui-js', get_template_directory_uri().'/assets/js/jquery-ui.js',array('jquery'), '', true);
+        wp_enqueue_script('owl-carousel-js', get_template_directory_uri().'/assets/js/owl.carousel.min.js',array('jquery'), '', true);
+        wp_enqueue_script('jquery-stellar-js', get_template_directory_uri().'/assets/js/jquery.stellar.min.js',array('jquery'), '', true);
+        wp_enqueue_script('jquery-countdown-js', get_template_directory_uri().'/assets/js/jquery.countdown.min.js',array('jquery'), '', true);
+        wp_enqueue_script('jquery-magnific-popup-js', get_template_directory_uri().'/assets/js/jquery.magnific-popup.min.js',array('jquery'), '', true);
+        wp_enqueue_script('bootstrap-datepicker-js', get_template_directory_uri().'/assets/js/bootstrap-datepicker.min.js',array('jquery'), '', true);
+        wp_enqueue_script('aos-js', get_template_directory_uri().'/assets/js/aos.js',array('jquery'), '', true);
+        wp_enqueue_script('countTo-js', get_template_directory_uri().'/assets/js/jquery.countTo.js',array('jquery'), '', true);
+        wp_enqueue_script( 'echk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
+
+    }
     wp_enqueue_script('popper-js', get_template_directory_uri().'/assets/js/popper.min.js',array('jquery'), '', true);
     wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js',array('jquery'), '', true);
-    wp_enqueue_script('owl-carousel-js', get_template_directory_uri().'/assets/js/owl.carousel.min.js',array('jquery'), '', true);
-    wp_enqueue_script('jquery-stellar-js', get_template_directory_uri().'/assets/js/jquery.stellar.min.js',array('jquery'), '', true);
-    wp_enqueue_script('jquery-countdown-js', get_template_directory_uri().'/assets/js/jquery.countdown.min.js',array('jquery'), '', true);
-    wp_enqueue_script('jquery-magnific-popup-js', get_template_directory_uri().'/assets/js/jquery.magnific-popup.min.js',array('jquery'), '', true);
-    wp_enqueue_script('bootstrap-datepicker-js', get_template_directory_uri().'/assets/js/bootstrap-datepicker.min.js',array('jquery'), '', true);
-    wp_enqueue_script('aos-js', get_template_directory_uri().'/assets/js/aos.js',array('jquery'), '', true);
-    wp_enqueue_script('countTo-js', get_template_directory_uri().'/assets/js/jquery.countTo.js',array('jquery'), '', true);
+
     wp_enqueue_script('main-js', get_template_directory_uri().'/assets/js/main.js',array('jquery'), '', true);
 
-    wp_enqueue_script( 'echk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -275,15 +280,15 @@ function mce_page_break($mce_buttons){
  */
 
 // активация доп полей пользователя
-add_action( 'show_user_profile', 'show_user_fields' );
-add_action( 'edit_user_profile', 'show_user_fields' );
+//add_action( 'show_user_profile', 'show_user_fields' );
+//add_action( 'edit_user_profile', 'show_user_fields' );
 
 //сохранение доп полей
-add_action( 'personal_options_update', 'save_user_fields' );
-add_action( 'edit_user_profile_update', 'save_user_fields' );
+//add_action( 'personal_options_update', 'save_user_fields' );
+//add_action( 'edit_user_profile_update', 'save_user_fields' );
 
 // добавление шорткода вывода всех пользователей
-add_shortcode('get-users', 'users_shortcode');
+//add_shortcode('get-users', 'users_shortcode');
 
 // удаление надписи "навигация по записям"
 /*add_filter('navigation_markup_template', 'my_navigation_template');
