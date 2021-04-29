@@ -274,6 +274,8 @@ a:hover {
     height:25vh;
 }
 
+/*стили для постов*/
+
 .echk-single-content{
     min-width: 375px;
     width: 210mm;   /* 210mm 798px ширина */
@@ -286,6 +288,14 @@ a:hover {
     font-size: 0.75em; /*1em 1.2vw 12px */
     line-height: 1.5;
 }
+
+.echk-single-content .post-thumbnail{
+    line-height: 297mm;
+}
+
+.echk-single-content .post-thumbnail img{
+    vertical-align: middle;
+ }
 
 .echk-single-content ul{
     margin: 0;
@@ -302,11 +312,16 @@ a:hover {
     padding: 0 0.5em 0 0.5em;
 }
 
-.container .row .navbar {
-    margin-top: 50px;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+.echk-single-content table,
+.echk-single-content table td,
+.echk-single-content table th{
+    border: 1px solid #b5b2b2;
+    text-align: center;
+}
+
+p strong em,
+p em{
+    font-size: 0.75em;
 }
 
 @media screen and (max-width:767px) {
@@ -318,3 +333,13 @@ a:hover {
         padding:0;
     }
 }
+
+/*конец стилей для постов*/
+
+.container .row .navbar {
+    margin-top: 50px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
