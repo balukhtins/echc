@@ -14,8 +14,9 @@
     //debug($echk_single_content);
     //debug($c);
 
-    $d = explode('</div>
-</div>', $c);
+    /*$d = explode('</div>
+</div>', $c);*/
+    $d = explode('<p><!--echk_next--></p>', $c);
 
     //debug($d);
 
@@ -23,8 +24,8 @@ $paged = $wp_query->get( 'page' );
 
 if ( $paged < 2 ){
     // Это первая страница или пост не разделен на страницы
-    for ($i=0; $i<count($d)-1; $i++){
-        if ($i == 0){
+    for ($i=0; $i<count($d); $i++){
+        /*if ($i == 0){
             $f[$i] = str_replace('<section class="fw-main-row ">
 <div class="fw-container">
 <div class="fw-row">
@@ -38,16 +39,18 @@ if ( $paged < 2 ){
 <div id="" class="fw-col-xs-12">',
                 '',
                 $d[$i]);
-        }
+        }*/
+        $f[$i] = $d[$i];
     }
 }
 else {
     // Это 2,3,4 ... страница разделенного поста.
-    for ($i=0; $i<count($d)-1; $i++){
-        $f[$i] = str_replace('<div class="fw-row">
+    for ($i=0; $i<count($d); $i++){
+        /*$f[$i] = str_replace('<div class="fw-row">
 <div id="" class="fw-col-xs-12">',
             '',
-            $d[$i]);
+            $d[$i]);*/
+        $f[$i] = $d[$i];
        }
  }
 //debug($f);
@@ -96,9 +99,9 @@ else {
                     <?php endif;?>
 
 
-                    <?php for ($i=0; $i<count($f); $i++):?>
+                    <?php for ($i=0; $i<count($d); $i++):?>
                         <div class="echk-single-content">
-                            <?php echo $f[$i];?>
+                            <?php echo $d[$i];?>
 
                         </div>
                     <?php endfor;?>
@@ -126,7 +129,7 @@ else {
                     </div>
 
                 <?php else: ?>
-                    <div class="echk-single-content col-md-8">
+                    <div class="echk-single-content col">
                         <?php echk_post_thumbnail(); ?>
                     </div>
                     <?php the_content();?>
