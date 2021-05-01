@@ -260,9 +260,4 @@ jQuery(document).ready(function($) {
 		counter();
 	});
 
-	$('.echk-single-content table').wrap('<div class = "table-responsive"></div>').addClass('table table-bordered');
-
-
-
-
 });

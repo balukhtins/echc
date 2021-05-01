@@ -320,9 +320,32 @@ a:hover {
     text-align: center;
 }
 
+.echk-single-content .title,
+.echk-single-content .title td,
+.echk-single-content .title th{
+    border: none;
+}
+
+.fw-col-xs-12{
+    --width: calc(100%);
+}
+
+.echk-single-content table{
+    overflow: auto;
+    display: inline-block;
+}
+
 p strong em,
 p em{
     font-size: 0.75em;
+}
+
+.navbar .post-menu-active {
+    color: #b97205;
+}
+
+.entry-header .entry-title{
+    margin-top: 1em;
 }
 
 @media screen and (max-width:767px) {
