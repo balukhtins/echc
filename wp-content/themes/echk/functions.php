@@ -271,31 +271,10 @@ function mce_page_break($mce_buttons){
     return $mce_buttons;
 }
 
-
-
-
 /*
- * Для DevIT
- *
+ * навигация по страницам
  */
+require get_template_directory() . '/inc/echk_link_pages.php';
 
-// активация доп полей пользователя
-//add_action( 'show_user_profile', 'show_user_fields' );
-//add_action( 'edit_user_profile', 'show_user_fields' );
 
-//сохранение доп полей
-//add_action( 'personal_options_update', 'save_user_fields' );
-//add_action( 'edit_user_profile_update', 'save_user_fields' );
-
-// добавление шорткода вывода всех пользователей
-//add_shortcode('get-users', 'users_shortcode');
-
-// удаление надписи "навигация по записям"
-/*add_filter('navigation_markup_template', 'my_navigation_template');
-
-function my_navigation_template($template, $class){
-    return '<nav class="navigation" role="navigation">
-                <div class="nav-links">%3$s</div>
-            </nav>';
-}*/
 

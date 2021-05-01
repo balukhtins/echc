@@ -297,7 +297,8 @@ a:hover {
     vertical-align: middle;
  }
 
-.echk-single-content ul{
+.echk-single-content ul,
+.echk-single-content li{
     margin: 0;
     font-size: 1em;
 }
@@ -343,3 +344,9 @@ p em{
     align-items: flex-start;
 }
 
+/*стили для пагинации по страницам*/
+.wp-pagenavi a,
+.wp-pagenavi span{
+    margin-right: 5px;
+}
+/*конец стилей для пагинации по страницам*/

@@ -9,54 +9,16 @@
 
 ?>
 <?php
-    //$echk_single_content = get_the_content();
     $c = apply_filters( 'the_content', get_the_content() );
-    //debug($echk_single_content);
-    //debug($c);
 
-    /*$d = explode('</div>
-</div>', $c);*/
     $d = explode('<p><!--echk_next--></p>', $c);
 
     //debug($d);
 
 $paged = $wp_query->get( 'page' );
-
-if ( $paged < 2 ){
-    // Это первая страница или пост не разделен на страницы
-    for ($i=0; $i<count($d); $i++){
-        /*if ($i == 0){
-            $f[$i] = str_replace('<section class="fw-main-row ">
-<div class="fw-container">
-<div class="fw-row">
-<div id="" class="fw-col-xs-12">',
-                '',
-                $d[$i]);
-        }
-        else{
-            $f[$i] = str_replace('
-<div class="fw-row">
-<div id="" class="fw-col-xs-12">',
-                '',
-                $d[$i]);
-        }*/
-        $f[$i] = $d[$i];
-    }
-}
-else {
-    // Это 2,3,4 ... страница разделенного поста.
-    for ($i=0; $i<count($d); $i++){
-        /*$f[$i] = str_replace('<div class="fw-row">
-<div id="" class="fw-col-xs-12">',
-            '',
-            $d[$i]);*/
-        $f[$i] = $d[$i];
-       }
- }
-//debug($f);
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header" style="text-align: center;">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -112,17 +74,21 @@ else {
                         <div class="row">
                             <div class="col-12">
                                 <?php
-                                wp_link_pages( [
-                                    'before'           => '<p>' . __('Pages:'),
+                                /*wp_link_pages( [
+                                    'before'           => '<p>',
                                     'after'            => '</p>',
-                                    'link_before'      => '',
-                                    'link_after'       => '',
-                                    'next_or_number'   => 'number',
-                                    'nextpagelink'     => __('Next'),
-                                    'previouspagelink' => __('Previous'),
+                                    'link_before'      => ' ',
+                                    'link_after'       => ' ',
+                                    'next_or_number'   => 'next',
+                                    'nextpagelink'     => '  ' . __('Next'),
+                                    'previouspagelink' => __('Previous') . ' ',
                                     'pagelink'         => '%',
                                     'echo'             => 1,
-                                ] );
+                                    'separator'        => '  |  ',
+                                ] );*/
+
+                                 echo echk_link_pages();
+
                                 ?>
                             </div>
                         </div>
