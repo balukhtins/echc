@@ -159,7 +159,7 @@ function echk_scripts() {
     wp_enqueue_style( 'echk-google-font', 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700' );
     wp_enqueue_style( 'echk-fonts-style', get_template_directory_uri() .'/assets/fonts/icomoon/style.css' );
     wp_enqueue_style( 'echk-bootstrap-style', get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
-    if (is_page(array('home', 'about-us', 'literature', 'test'))){
+    if (is_page(array('home', 'about-us', 'literature', 'test')) || is_home() || is_category(['technical-literature', 'protection-of-work', 'resources'])){
         wp_enqueue_style( 'echk-magnific-popup-style', get_template_directory_uri() .'/assets/css/magnific-popup.css' );
         wp_enqueue_style( 'echk-jquery-ui-style', get_template_directory_uri() .'/assets/css/jquery-ui.css' );
         wp_enqueue_style( 'echk-owl-carousel-style', get_template_directory_uri() .'/assets/css/owl.carousel.min.css' );
@@ -177,7 +177,7 @@ function echk_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_template_directory_uri().'/assets/js/jquery-3.3.1.min.js');
     wp_enqueue_script('jquery');
-    if (is_page(array('home', 'about-us', 'literature', 'test'))){
+    if (is_page(array('home', 'about-us', 'literature', 'test')) || is_home() || is_category(['technical-literature', 'protection-of-work', 'resources'])){
         wp_enqueue_script('jquery-migrate-js', get_template_directory_uri().'/assets/js/jquery-migrate-3.0.1.min.js',array('jquery'), '', true);
         wp_enqueue_script('jquery-ui-js', get_template_directory_uri().'/assets/js/jquery-ui.js',array('jquery'), '', true);
         wp_enqueue_script('owl-carousel-js', get_template_directory_uri().'/assets/js/owl.carousel.min.js',array('jquery'), '', true);
