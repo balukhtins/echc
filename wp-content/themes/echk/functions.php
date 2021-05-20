@@ -185,15 +185,13 @@ function echk_scripts() {
         wp_enqueue_script('jquery-countdown-js', get_template_directory_uri().'/assets/js/jquery.countdown.min.js',array('jquery'), '', true);
         wp_enqueue_script('jquery-magnific-popup-js', get_template_directory_uri().'/assets/js/jquery.magnific-popup.min.js',array('jquery'), '', true);
         wp_enqueue_script('bootstrap-datepicker-js', get_template_directory_uri().'/assets/js/bootstrap-datepicker.min.js',array('jquery'), '', true);
-        wp_enqueue_script('aos-js', get_template_directory_uri().'/assets/js/aos.js',array('jquery'), '', true);
         wp_enqueue_script('countTo-js', get_template_directory_uri().'/assets/js/jquery.countTo.js',array('jquery'), '', true);
         wp_enqueue_script( 'echk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-        wp_enqueue_script('main-js', get_template_directory_uri().'/assets/js/main.js',array('jquery'), '', true);
     }
     wp_enqueue_script('popper-js', get_template_directory_uri().'/assets/js/popper.min.js',array('jquery'), '', true);
     wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/assets/js/bootstrap.min.js',array('jquery'), '', true);
-
-
+    wp_enqueue_script('aos-js', get_template_directory_uri().'/assets/js/aos.js',array('jquery'), '', true);
+    wp_enqueue_script('main-js', get_template_directory_uri().'/assets/js/main.js',array('jquery'), '', true);
 
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

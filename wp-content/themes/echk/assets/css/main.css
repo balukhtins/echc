@@ -331,7 +331,12 @@ a:hover {
 
 .echk-single-content table{
     overflow: auto;
-    display: inline-block;
+    /*display: inline-block;*/
+}
+
+
+.echk-single-content table tbody{
+    width: 100%;
 }
 
 p strong em,
@@ -351,10 +356,33 @@ p em{
     .echk-single-content {
         width: 95%;
         min-width: 95%;
+        padding: 5px;
     }
+
+    .echk-single-content .fw-row .fw-col-xs-12{
+        padding: 10px;
+    }
+
+    .echk-single-content .fw-row .fw-col-xs-12 p,
+    .echk-single-content p{
+        font-size: 16px;
+    }
+
     .col-md-8{
         padding:0;
     }
+
+    .echk-single-content table{
+        display: inline-block;
+    }
+}
+
+.echk-image{
+    min-height: unset;
+}
+
+.echk-single-content .post-thumbnail {
+    line-height: normal;
 }
 /*конец стилей для постов*/
 

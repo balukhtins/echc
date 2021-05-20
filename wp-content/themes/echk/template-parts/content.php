@@ -55,7 +55,7 @@ $paged = $wp_query->get( 'page' );
                 <div class="col">
 
                     <?php if ( $paged < 2 ):?>
-                        <div class="echk-single-content">
+                        <div class="echk-single-content echk-image">
                             <?php echk_post_thumbnail(); ?>
                         </div>
                     <?php endif;?>

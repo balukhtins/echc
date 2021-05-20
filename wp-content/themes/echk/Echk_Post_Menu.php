@@ -114,8 +114,8 @@ class Echk_Post_Menu extends Walker_Nav_Menu
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
         $item_output  = $args->before;
-        if ($item->current) $echk_activ = 'post-menu-active';
-        $item_output .= '<a' . $attributes . 'class="nav-link ' . $echk_activ .'">';
+        ($item->current) ? $echk_active = 'post-menu-active' : $echk_active = '';
+        $item_output .= '<a' . $attributes . 'class="nav-link ' . $echk_active .'">';
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;

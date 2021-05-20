@@ -76,7 +76,10 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define('AUTOSAVE_INTERVAL', 5184000);
+define( 'WP_MEMORY_LIMIT', '2048M' );
+define( 'WP_MAX_MEMORY_LIMIT', '2048M' );
 
 /* Это всё, дальше не редактируем. Успехов! */
 
